@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My First Page</title>
+  <!-- https://getbootstrap.com/ -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body id="top">
+  <header class="site-header">
+    <div class="container site-header_inner">
+      <div class="brand">
+        <span class="brand_logo" aria-hidden="true">&#x1F437;</span>
+        <div>
+          <h1 class="brand_title">HTML/CSS Demo</h1>
+          <p class="brand_subtitle">Shows HTML structure + CSS selectors + Bootstrap columns</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#bootstrap-grid">Bootstrap Grid</a></li>
+          <li><a href="#selectors">Selectors</a></li>
+          <li><a href="#table">Table</a></li>
+          <li><a href="#form">Form</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!-- Bootstrap container -->
+  <main class="container page">
+    <section class="hero">
+      <h2>What's on this page?</h2>
+      <p>
+        This page is intended to demonstrate common HTML elements (headings, lists, links,
+        tables, forms, and semantic layout) and CSS topics (selectors, box model, hover states,
+        positioning, and the bootstrap lib).
+      </p>
+    </section>
+
+ <!-- Bootstrap Grid Example -->
+    <section id="bootstrap-grid" class="demo-section">
+      <h2>Bootstrap Columns Example</h2>
+      <p class="muted">
+        Resize the browser: these cards stack on small screens and become columns on wider screens.
+      </p>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <article class="demo-card">
+            <h3 class="demo-card_title">Column 1</h3>
+            <p class="demo-card_text">
+              Uses <code>.col-12 .col-md-4</code>. On mobile it's full width, on ≥md it's 1/3.
+            </p>
+            <a class="btn btn-primary btn-sm" href="#selectors">Go to selectors</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="demo-card">
+            <h3 class="demo-card_title">Column 2</h3>
+            <p class="demo-card_text">
+              Bootstrap handles the layout. Your CSS still controls typography & custom components.
+            </p>
+            <a class="btn btn-outline-secondary btn-sm" href="#table">Go to table</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="demo-card">
+            <h3 class="demo-card_title">Column 3</h3>
+            <p class="demo-card_text">
+              Add gutters with <code>.g-3</code> on the row. Try changing it to <code>.g-0</code>.
+            </p>
+            <a class="btn btn-success btn-sm" href="#form">Go to form</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- Positioning and Box Model Examples -->
+    <section id="selectors" class="demo-section">
+      <h2>CSS Selector Examples</h2>
+      <p class="muted">
+        This section demonstrates class selectors, id selectors, attribute selectors, and pseudo-classes.
+      </p>
+
+      <div class="grid-2">
+        <article class="panel">
+          <h3 class="panel_title">Class + ID</h3>
+
+          <div class="comment">
+            <p class="comment_meta first">
+              By Mark on <time datetime="2025-05-23">2025-05-23</time>
+            </p>
+            <p class="comment_text">Best place. Ever.</p>
+          </div>
+
+          <div class="comment">
+            <p class="comment_meta first">
+              By Ricardo on <time datetime="2025-12-11">2025-12-11</time>
+            </p>
+            <p class="comment_text">Easy buddy!</p>
+          </div>
+
+          <div class="comment" id="latestComment">
+            <p class="comment_meta first">
+              By Susan on <time datetime="2026-01-08">2026-01-08</time>
+            </p>
+            <p class="comment_text">I love Central Park.</p>
+          </div>
+
+          <p class="muted small">
+            The last comment is styled using <code>#latestComment</code>.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h3 class="panel_title">Attribute + Link States</h3>
+          <p>
+            Hover these items (attribute selector: anything with a <code>title</code> attribute):
+          </p>
+
+          <ul class="link-list">
+            <li><a href="#" title="Tooltip: This is a demo link">Demo link with title</a></li>
+            <li><a href="#table" title="Jump to the data table">Jump to the table</a></li>
+            <li><a href="#form">A link without title (less styling)</a></li>
+          </ul>
+
+          <p class="muted small">
+            Links also use <code>:link</code>, <code>:visited</code>, <code>:hover</code>, and <code>:active</code>.
+          </p>
+        </article>
+      </div>
+
+      <div class="grid-2 mt-16">
+        <article class="panel">
+          <h3 class="panel_title">Box Model Cards</h3>
+          <div class="box-row">
+            <div class="box-sample">
+              <h4>Card A</h4>
+              <p>Margin + padding + border + shadow. </p>
+            </div>
+            <div class="box-sample">
+              <h4>Card B</h4>
+              <p>Same class, shared styles.</p>
+            </div>
+            <div class="box-sample">
+              <h4>Card C</h4>
+              <p>Grid layout with 2 columns.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3 class="panel_title">Overlay (Relative + Absolute)</h3>
+          <figure class="overlay-card">
+            <img
+              src="https://picsum.photos/seed/rand/640/360"
+              alt="Random city photo placeholder"
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <figcaption>Overlay caption on an image</figcaption>
+          </figure>
+          <p class="muted small">
+            The <code>figure</code> is <code>position: relative</code>; the caption is <code>position: absolute</code>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+<!-- table -->
+    <section id="table" class="demo-section">
+      <h2>Styled Data Table</h2>
+      <p class="muted">Includes caption, header, zebra striping, and hover highlighting.
+        See <a href="https://getbootstrap.com/docs/5.3/content/tables/">Bootstrap tables</a>  for similar designs
+      </p>
+
+      <div class="table-wrap" role="region" aria-label="Famous paintings table" tabindex="0">
+        <table class="data-table">
+          <caption>Top Games in 2025</caption>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Developer</th>
+              <th scope="col">Ranking</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Battlefield 6</td>
+              <td>Battlefield Studios</td>
+              <td>7.0</td>
+            </tr>
+            <tr>
+              <td>NBA 2K26</td>
+              <td>Visual Concepts</td>
+              <td>7.0</td>
+            </tr>
+            <tr>
+              <td>Monster Hunter Wilds</td>
+              <td>Capcom</td>
+              <td>6.0</td>
+            </tr>
+            <tr>
+              <td>Call of Duty: Black Ops 7</td>
+              <td>Treyarch and Raven Software</td>
+              <td>5.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<!-- form -->
+    <section id="form" class="demo-section">
+      <h2>Mini Form Example</h2>
+      <p class="muted">Demonstrates labels, input types, and a select.</p>
+
+      <form class="demo-form" action="#" method="get">
+        <div class="form-row">
+          <label for="f-title">Title</label>
+          <input id="f-title" name="title" type="text" placeholder="Central Park" />
+        </div>
+
+        <div class="form-row">
+          <label for="f-country">Country</label>
+          <select id="f-country" name="where">
+            <option value="">Choose a country</option>
+            <option>Canada</option>
+            <option>Finland</option>
+            <option>United States</option>
+          </select>
+        </div>
+
+        <div class="form-row form-row--inline">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" placeholder="name@example.com" />
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-dark btn-sm" type="submit">Submit</button>
+          <button class="btn btn-light btn-sm" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <p class="muted small">
+        (This form doesn't actually submit anywhere. We can change the form action and method as needed.)
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer_inner">
+      <p class="small">
+        © <time datetime="2026-01-01">2026</time> Bobby Chan. All rights reserved.
+      </p>
+      <p class="small"><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
