@@ -16,7 +16,7 @@ public class UsersController {
 
     private List<Users> usersList = new ArrayList<>();
 
-    @GetMapping("/users/view") 
+    @GetMapping("/users/view")
     public String getAll(Model model) {
         // Call DB to get all users
         model.addAttribute("users", usersList);
@@ -29,7 +29,7 @@ public class UsersController {
         usersList.add(new Users(name, email, age));
         return "redirect:/users/view";
     }
-    
+
     @PostMapping("/users/update")
     public String putMethodName(@RequestParam String name, @RequestParam String email, @RequestParam int age) {
         // Call DB to update
