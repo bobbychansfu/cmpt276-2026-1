@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.models.Users;
+import com.example.demo.models.UsersFactory;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,16 +28,10 @@ public class UsersController {
     @PostMapping("/users/add")
     public String addUser(@RequestParam String name, @RequestParam String email, @RequestParam int age, @RequestParam String type) {
         // Call DB to add the user
-        Users newUser;
-        if (type.equals("admin")) {
-            newUser = new Users(name + " (Admin)", email, age);
-        } else if (type.equals("guest")) {
-            newUser = new Users(name + " (Guest)", email, age);
-        } else {
-            newUser = new Users(name, email, age);
-        }
+        Users newUser = UsersFactory.createUser(name, email, age, type);
+       
         usersList.add(newUser);
-        return "redirect:/users/view";
+        return "redirect:/users/view"; 
     }
 
     @PostMapping("/users/update")
