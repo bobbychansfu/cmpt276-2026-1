@@ -102,11 +102,13 @@
                 <h4 class="text-center mb-3">User Details</h4>
                 <table class="table table-bordered">
                     <tr>
+                        <th>UID</th>
                         <th>Age</th>
                         <th>Name</th>
                         <th>Email</th>
                     </tr>
                     <tr th:each="user : ${users}">
+                        <td th:text="${user.uid}">1</td>
                         <td th:text="${user.age}">30</td>
                         <td th:text="${user.name}">John Doe</td>
                         <td th:text="${user.email}"></td>

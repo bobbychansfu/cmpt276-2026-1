@@ -1,6 +1,13 @@
 package com.example.demo.models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int uid;
     private String name;
     private String email;
     private int age;
@@ -29,4 +36,11 @@ public class Users {
     public void setAge(int age) {
         this.age = age;
     }
+    public int getUid() {
+        return uid;
+    }
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+    
 }
