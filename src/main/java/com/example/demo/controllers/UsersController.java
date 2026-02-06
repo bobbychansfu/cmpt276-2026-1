@@ -39,20 +39,21 @@ public class UsersController {
        
         // usersList.add(newUser);
         usersRepository.save(newUser);
-        return "redirect:/users/view"; 
+        return "redirect:/users/view";  
     }
 
     @PostMapping("/users/update")
     public String putMethodName(@RequestParam String name, @RequestParam String email, @RequestParam int age) {
         // Call DB to update
         // look for email and update the user
-        for (Users user : usersList) {
-            if (user.getEmail().equals(email)) {
-                user.setName(name);
-                user.setAge(age);
-                break;
-            }
-        }
+        
+        // for (Users user : usersList) {
+        //     if (user.getEmail().equals(email)) {
+        //         user.setName(name);
+        //         user.setAge(age);
+        //         break;
+        //     }
+        // }
         return "redirect:/users/view";
     }
 }
