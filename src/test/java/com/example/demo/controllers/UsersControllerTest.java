@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.models.Users;
 import com.example.demo.models.UsersRepository;
 
-import org.h2.engine.User;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
