@@ -8,18 +8,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.http.MediaType;
 
 import com.example.demo.models.Post;
 
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-@SpringBootTest
-@AutoConfigureMockMvc
+@WebMvcTest(PostsController.class)
 public class PostsControllerTest {
     
     @Autowired
@@ -33,7 +31,8 @@ public class PostsControllerTest {
 		assertThat(controller).isNotNull();
 	}
 
-	@Test
+	@SuppressWarnings("null")
+    @Test
     void shouldAddMultiplePosts() throws Exception {
     Post post1 = new Post("First Post", "First Content");
     Post post2 = new Post("Second Post", "Second Content");

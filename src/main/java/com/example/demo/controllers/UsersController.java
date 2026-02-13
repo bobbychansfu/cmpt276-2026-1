@@ -45,15 +45,10 @@ public class UsersController {
     @PostMapping("/users/update")
     public String putMethodName(@RequestParam String name, @RequestParam String email, @RequestParam int age) {
         // Call DB to update
-        // look for email and update the user
+        // todo: as an exercise, look for email and update the user, 
+        //       then test it by adding a user, then updating it, 
+        //       then viewing all users to see the change
         
-        // for (Users user : usersList) {
-        //     if (user.getEmail().equals(email)) {
-        //         user.setName(name);
-        //         user.setAge(age);
-        //         break;
-        //     }
-        // }
         return "redirect:/users/view";
     }
 }
